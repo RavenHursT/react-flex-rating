@@ -1,0 +1,8 @@
+@for $i from 0 through 10{
+  .font-size-#{$i} {
+    font-size: $i+rem !important;
+  }
+  .font-size-#{$i}-5 {
+    font-size: $i+.5rem !important;
+  }
+}
