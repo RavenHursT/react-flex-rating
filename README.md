@@ -25,7 +25,7 @@ Check out the demo here! https://23m6jr1v5y.codesandbox.io/
 ## Installation
 
 ```bash
-yarn install react-flex-rating
+yarn add react-flex-rating
 ```
 
 In your [sass-enabled React app](https://medium.com/front-end-hacking/how-to-add-sass-or-scss-to-create-react-app-c303dae4b5bc) include this component's .scss:
