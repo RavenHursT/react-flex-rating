@@ -5,7 +5,7 @@ import SelectField from 'material-ui/SelectField'
 import MenuItem from 'material-ui/MenuItem'
 import FontIcon from 'material-ui/FontIcon'
 import Rating from '../../src/index'
-import './index.scss'
+import './styles/index.scss'
 
 const styles = {
   fontFamily: 'sans-serif',

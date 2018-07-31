@@ -2,7 +2,6 @@ import React from 'react'
 import RatingIcon from './rating-icon'
 import classNameBuilder from './util/class-name-builder.util'
 import noop from './util/noop.util'
-import './react-flex-rating.scss'
 
 export default class ReactFlexRating extends React.Component {
   static initialState = {

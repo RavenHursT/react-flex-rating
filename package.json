@@ -5,13 +5,14 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
+    "scss",
     "css",
     "es",
     "lib",
     "umd"
   ],
   "scripts": {
-    "build": "nwb build-react-component",
+    "build": "nwb build-react-component --copy-files",
     "clean": "nwb clean-module && nwb clean-demo",
     "start": "nwb serve-react-demo",
     "test": "nwb test-react",
@@ -35,6 +36,8 @@
   "license": "MIT",
   "repository": "https://github.com/RavenHursT/react-flex-rating",
   "keywords": [
-    "react-component"
+    "react-component",
+    "rating",
+    "material-design"
   ]
 }
