@@ -1,6 +1,6 @@
 {
   "name": "react-flex-rating",
-  "version": "0.0.3",
+  "version": "0.0.31",
   "description": "react-flex-rating React component",
   "main": "lib/index.js",
   "module": "es/index.js",
