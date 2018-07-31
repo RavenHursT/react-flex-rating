@@ -30,10 +30,10 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
   },
-  "author": "",
-  "homepage": "",
+  "author": "RavenHursT",
+  "homepage": "https://github.com/RavenHursT/react-flex-rating",
   "license": "MIT",
-  "repository": "",
+  "repository": "https://github.com/RavenHursT/react-flex-rating",
   "keywords": [
     "react-component"
   ]
