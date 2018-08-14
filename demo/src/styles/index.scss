@@ -17,4 +17,36 @@
   .MuiFormControl-root-1 {
     min-width: 8em;
   }
+
+  .rating {
+    .rating-icon {
+      > span > span {
+        transition: color 150ms;
+      }
+
+      .display-icon {
+        transition: width 50ms;
+      }
+
+      .background-icon {
+        > span {
+          color: #494949;
+        }
+
+        &.highlight > span{
+          color: #ffd34c;
+        }
+      }
+
+      &.active, &.half {
+        .display-icon > span {
+          color: #db9f33;
+        }
+      }
+
+      &.highlight .display-icon > span {
+        color: #ffd34c;
+      }
+    }
+  }
 }

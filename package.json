@@ -1,7 +1,7 @@
 {
   "name": "react-flex-rating",
-  "version": "0.0.31",
-  "description": "react-flex-rating React component",
+  "version": "1.0.0",
+  "description": "react-flex-rating Flexable React Component for ratings",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -17,23 +17,23 @@
     "start": "nwb serve-react-demo",
     "test": "nwb test-react",
     "test:coverage": "nwb test-react --coverage",
-    "test:watch": "nwb test-react --server"
+    "test:watch": "nwb test-react --server",
+    "publish-demo": "nwb build-demo && gh-pages -d demo/dist"
   },
-  "dependencies": {
-    "material-ui": "0.20.0"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "react": "16.x"
   },
   "devDependencies": {
     "@material-ui/core": "^1.5.0",
+    "gh-pages": "^1.2.0",
     "nwb": "0.21.x",
     "nwb-sass": "^0.8.4",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
   },
   "author": "RavenHursT",
-  "homepage": "https://23m6jr1v5y.codesandbox.io/",
+  "homepage": "https://ravenhurst.github.io/react-flex-rating/",
   "license": "MIT",
   "repository": "https://github.com/RavenHursT/react-flex-rating",
   "keywords": [

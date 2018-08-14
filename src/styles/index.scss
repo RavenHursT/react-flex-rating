@@ -3,30 +3,6 @@
     cursor: pointer;
     position: relative;
     display: inline-block;
-
-    > span > span {
-      transition: color 0ms
-    }
-
-    .background-icon {
-      > span {
-        color: #494949 !important;
-      }
-
-      &.highlight > span{
-        color: #ffd34c !important;
-      }
-    }
-
-    &.active, &.half {
-      .display-icon > span {
-        color: #db9f33 !important;
-      }
-    }
-
-    &.highlight .display-icon > span {
-      color: #ffd34c !important;
-    }
   }
 
   &.disabled {

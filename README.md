@@ -20,7 +20,7 @@ A (semi)full-featured React rating component.
 - Allows for propagation of custom `className` property
 - Plays nice w/ [material-ui 1.4.x](https://material-ui.com/)
 
-Check out the demo here! https://23m6jr1v5y.codesandbox.io/
+Check out the demo here! https://ravenhurst.github.io/react-flex-rating/
 
 ## Installation
 
@@ -36,35 +36,21 @@ In your [sass-enabled React app](https://medium.com/front-end-hacking/how-to-add
 
 Add the component into your app somewhere:
 ```javascript
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import FontIcon from 'material-ui/FontIcon'
 import Rating from 'react-flex-rating'
 
 // Inside React component render():
-<MuiThemeProvider>
-  <Rating
-    {...{
-      className: `custom-class`,
-      value: rating,
-      allowHalfs,
-      maxValue,
-      disabled,
-      iconCount: starCount,
-      activeIcon: (
-        <FontIcon className="material-icons font-size-2-5">
-          star
-        </FontIcon>
-      ),
-      inactiveIcon: (
-        <FontIcon className="material-icons font-size-2-5">
-          star_border
-        </FontIcon>
-      ),
-      onSelect: rating => this.setState({ rating })
-    }} />
-</MuiThemeProvider>
+<Rating {...{
+  className: `html-entities-rating`,
+  value: rating,
+  allowHalfs,
+  maxValue,
+  disabled,
+  iconCount: starCount,
+  activeIcon: <span>&#9733;</span>, // https://www.toptal.com/designers/htmlarrows/symbols/black-star/
+  inactiveIcon: <span>&#9734;</span>, // https://www.toptal.com/designers/htmlarrows/symbols/white-star/
+  onSelect: rating => this.setState({ rating })
+}} />
 ```
-(Note: currently only built and tested w/ [material-ui 1.4.x](https://material-ui.com/) `FontIcon`. Not sure if it will work w/ other `ReactElement`s.)
 
 ## Component Properties:
 - `value` (Number): Current value of the component.  Used to drive the rendering of "active" icons. This is passed into the firrst argument of the `onSelect` callback method.
