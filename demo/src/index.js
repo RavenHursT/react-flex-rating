@@ -1,9 +1,11 @@
 import React from 'react'
 import { render } from 'react-dom'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import SelectField from 'material-ui/SelectField'
-import MenuItem from 'material-ui/MenuItem'
-import FontIcon from 'material-ui/FontIcon'
+import Select from '@material-ui/core/Select'
+import MenuItem from '@material-ui/core/MenuItem'
+import Icon from '@material-ui/core/Icon'
+import Input from '@material-ui/core/Input'
+import InputLabel from '@material-ui/core/InputLabel'
+import FormControl from '@material-ui/core/FormControl'
 import Rating from '../../src/index'
 import './styles/index.scss'
 
@@ -36,89 +38,124 @@ class App extends React.Component {
       allowHalfs,
       disabled
     } = this.state
-
-    return <MuiThemeProvider>
-      <div style={styles}>
-        <h2>Start editing to see some magic happen {'\u2728'}</h2>
-        <div>
-          <SelectField
-            floatingLabelText="Star Count"
-            value={starCount}
-            onChange={(e, i, starCount) => this.setState({ starCount })} >
+    return <div style={styles}>
+      <h2>Start editing to see some magic happen {'\u2728'}</h2>
+      <form className="selects" autoComplete="off">
+        <FormControl>
+          <InputLabel shrink htmlFor="star-count">
+            Star Count
+          </InputLabel>
+          <Select {...{
+            value: starCount,
+            name: `star-count`,
+            onChange: ({target: {value: starCount}}) => this.setState({ starCount })
+          }} >
             {
               starCounts.map((value, key) => <MenuItem
                 {...{
                   key,
-                  value,
-                  primaryText: value
-                }} />)
+                  value
+                }} >{value}</MenuItem>)
             }
-          </SelectField>
+          </Select>
+        </FormControl>
           &nbsp;&nbsp;
-          <SelectField
-            floatingLabelText="Max Value"
-            value={maxValue}
-            onChange={(e, i, maxValue) => this.setState({ maxValue })} >
+        <FormControl>
+          <InputLabel shrink htmlFor="max-value">
+            Maximum Value
+          </InputLabel>
+          <Select
+            {...{
+              value: maxValue,
+              name: `max-value`,
+              onChange: ({target: {value: maxValue}}) => this.setState({ maxValue })
+            }} >
             {
               maxValues.map((value, key) => <MenuItem
                 {...{
                   key,
-                  value,
-                  primaryText: value
-                }} />)
+                  value
+                }} >{value}</MenuItem>)
             }
-          </SelectField>
+          </Select>
+        </FormControl>
           &nbsp;&nbsp;
-          <SelectField
-            floatingLabelText="Allow Half Values"
-            value={allowHalfs}
-            onChange={(e, i, allowHalfs) => this.setState({ allowHalfs })} >
+        <FormControl>
+          <InputLabel shrink htmlFor="allow-halves">
+            Allow Halves
+          </InputLabel>
+          <Select
+            {...{
+              value: allowHalfs ? 1 : 0,
+              name: `allow-halves`,
+              onChange: ({target: {value: allowHalfs}}) => this.setState({
+                allowHalfs: allowHalfs === 1
+              })
+            }} >
             <MenuItem
               {...{
-                value: true,
-                primaryText: `true`
-              }} />
+                value: 1
+              }} >True</MenuItem>
             <MenuItem
               {...{
-                value: false,
-                primaryText: `false`
-              }} />
-          </SelectField>
+                value: 0
+              }} >False</MenuItem>
+          </Select>
+        </FormControl>
           &nbsp;&nbsp;
-          <SelectField
-            floatingLabelText="Disabled"
-            value={disabled}
-            onChange={(e, i, disabled) => this.setState({ disabled })} >
+        <FormControl>
+          <InputLabel shrink htmlFor="disabled">
+            Disabled
+          </InputLabel>
+          <Select
+            {...{
+              value: disabled ? 1: 0,
+              name: `disabled`,
+              onChange: ({target: {value: disabled}}) => this.setState({
+                disabled: disabled === 1
+              })
+            }} >
             <MenuItem
               {...{
-                value: true,
-                primaryText: `true`
-              }} />
+                value: 1
+              }}>True</MenuItem>
             <MenuItem
               {...{
-                value: false,
-                primaryText: `false`
-              }} />
-          </SelectField>
-        </div>
-        <Rating {...{
-          className: `custom-class`,
-          value: rating,
-          allowHalfs,
-          maxValue,
-          disabled,
-          iconCount: starCount,
-          activeIcon: <FontIcon
-            className="material-icons font-size-2-5" >star</FontIcon>,
-          inactiveIcon: <FontIcon
-            className="material-icons font-size-2-5" >star_border</FontIcon>,
-          onSelect: rating => this.setState({ rating })
-        }} />
-        <div>
-          <label>Rating Value:</label><span>{rating}</span>
-        </div>
+                value: 0
+              }} >False</MenuItem>
+          </Select>
+        </FormControl>
+      </form>
+      <h2>Plays Nice w/ Material-Ui Icons!</h2>
+      <Rating {...{
+        className: `custom-class`,
+        value: rating,
+        allowHalfs,
+        maxValue,
+        disabled,
+        iconCount: starCount,
+        activeIcon: <Icon
+          className="material-icons font-size-2-5" >star</Icon>,
+        inactiveIcon: <Icon
+          className="material-icons font-size-2-5" >star_border</Icon>,
+        onSelect: rating => this.setState({ rating })
+      }} />
+      <div>
+        <label>Rating Value:</label><span>{rating}</span>
       </div>
-    </MuiThemeProvider>
+      <h2>HTML-Entity Icons</h2>
+      <Rating {...{
+        className: `html-entities-rating`,
+        value: rating,
+        allowHalfs,
+        maxValue,
+        disabled,
+        iconCount: starCount,
+        activeIcon: <span>&#9733;</span>,
+        inactiveIcon: <span>&#9734;</span>,
+        onSelect: rating => this.setState({ rating })
+      }} />
+    </div>
   }
 }
 

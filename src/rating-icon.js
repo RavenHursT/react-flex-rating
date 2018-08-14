@@ -1,12 +1,9 @@
 import React from 'react'
-import FontIcon from 'material-ui/FontIcon'
 import classNameBuilder from './util/class-name-builder.util'
 import noop from './util/noop.util'
 
 const handleMove = (e, { value, onMove = noop }) => onMove(e, value)
-
 const handleSelect = (e, { value, onSelect = noop }) => onSelect(e, value)
-
 const generateClasses = ({
                            active = ``,
                            inactive = ``,
@@ -20,19 +17,9 @@ const generateClasses = ({
     `${highlight && `${RatingIcon.HIGHLIGHT_STATE_KEY} `}`
   ].join(``)
 
-const renderFontIcon = iconName => (
-  <FontIcon
-    {...{
-      className: `material-icons`
-    }}
-  >
-    {iconName}
-  </FontIcon>
-)
-
 const RatingIcon = props => {
   const {
-    activeIcon = renderFontIcon(`star`),
+    activeIcon,
     inactiveIcon,
     active,
     inactive,
@@ -40,13 +27,13 @@ const RatingIcon = props => {
     highlight,
     highlightBackgroundIcon
   } = props
-  const backgroundIcon = inactiveIcon || renderFontIcon(`star_border`)
+  const backgroundIcon = inactiveIcon
   const displayIcon =
     inactive && half && highlight
-      ? inactiveIcon || renderFontIcon(`star_border`)
+      ? inactiveIcon
       : active || half
       ? activeIcon
-      : inactiveIcon || renderFontIcon(`star_border`)
+      : inactiveIcon
 
   const iconContainerStyle = {
     display: "inline-block",
