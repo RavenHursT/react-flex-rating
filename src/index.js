@@ -2,8 +2,13 @@ import React from 'react'
 import RatingIcon from './rating-icon'
 import classNameBuilder from './util/class-name-builder.util'
 import noop from './util/noop.util'
+//TODO: Attempt to update the dependencies, a lot of them aren't maintained anymore. Might be a good idea to run
+// a fresh CRA to get some of the updated things.
 
+//TODO: CHANGE TO FUNCTIONAL COMPONENT
 export default class ReactFlexRating extends React.Component {
+
+
   static initialState = {
     highlightCount: 0,
     hoverPercent: 0
@@ -13,8 +18,10 @@ export default class ReactFlexRating extends React.Component {
     value: 0,
     maxValue: 100,
     allowHalfs: false,
-    disabled: false
+
   }
+disabled: false
+  //TODO: useState for state management to remove all of this as well
   constructor(props) {
     super(props)
     this.state = { ...ReactFlexRating.initialState }
@@ -24,7 +31,7 @@ export default class ReactFlexRating extends React.Component {
     this.onMove = this.onMove.bind(this)
     this.onSelect = this.onSelect.bind(this)
   }
-
+  //TODO: useState for changing state setAllowHalfs for example
   getIconConfigs() {
     const {
       allowHalfs = ReactFlexRating.defaultProps.allowHalfs,
@@ -38,7 +45,7 @@ export default class ReactFlexRating extends React.Component {
     } = this.state
     const quotient = maxValue / iconCount
     const iconConfigs = []
-
+    //TODO: Might be best to leave most of the logic
     let lastActiveValue = 0
     for (let i = 1; i <= iconCount; i++) {
       const sliceValue = i * quotient
@@ -76,7 +83,7 @@ export default class ReactFlexRating extends React.Component {
     }
     return iconConfigs
   }
-
+  //TODO: turn into a function and levae logic might be the best idea here. There is event handlers but no binding
   static calculateInteractPercentage(event, {allowHalfs}) {
     if (!allowHalfs) {
       return 1
@@ -93,7 +100,7 @@ export default class ReactFlexRating extends React.Component {
     // Returning 0 if the delta is negative solves the flickering issue
     return delta < 0 ? 0 : delta / targetRect.width;
   }
-
+  //TODO: This might be good, no changes may be needed depending on what errors are thrown up top
   renderIcons() {
     const {
       activeIcon,
@@ -117,7 +124,7 @@ export default class ReactFlexRating extends React.Component {
         }} />
     )
   }
-
+  //TODO: Remove setState probably have to useEffect
   onMove(e, value) {
     const {
       iconCount,
@@ -147,7 +154,7 @@ export default class ReactFlexRating extends React.Component {
 
     this.setState(...ReactFlexRating.initialState)
   }
-
+  //TODO: most of the render will have to be torn out. See where it takes me.
   render() {
     const {
       className,
