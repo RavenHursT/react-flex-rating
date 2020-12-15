@@ -21,8 +21,7 @@
     "publish-demo": "nwb build-demo && gh-pages -d demo/dist"
   },
   "dependencies": {
-    "react-icons": "^4.1.0",
-    "react-scripts": "^4.0.1"
+    "react-icons": "^4.1.0"
   },
   "peerDependencies": {
     "react": "16.x"
@@ -33,7 +32,8 @@
     "node-sass": "^4.14.1",
     "nwb": "0.21.x",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "react-scripts": "^4.0.1"
   },
   "author": "RavenHursT",
   "homepage": "https://ravenhurst.github.io/react-flex-rating/",
