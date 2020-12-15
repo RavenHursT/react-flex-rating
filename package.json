@@ -14,13 +14,16 @@
   "scripts": {
     "build": "nwb build-react-component --copy-files",
     "clean": "nwb clean-module && nwb clean-demo",
-    "start": "nwb serve-react-demo",
+    "start": "react-scripts start",
     "test": "nwb test-react",
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server",
     "publish-demo": "nwb build-demo && gh-pages -d demo/dist"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react-icons": "^4.1.0",
+    "react-scripts": "^4.0.1"
+  },
   "peerDependencies": {
     "react": "16.x"
   },
@@ -40,5 +43,17 @@
     "react-component",
     "rating",
     "material-design"
-  ]
+  ],
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
