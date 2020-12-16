@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Selector({setIconValue, value}) {
+const Selector = ({setIconValue, value}) => {
 	return (
 		<div>
 			<h1> Select Amount of Icons </h1>
@@ -19,6 +19,6 @@ function Selector({setIconValue, value}) {
 			</select>
 		</div>
 	);
-}
+};
 
 export default Selector;

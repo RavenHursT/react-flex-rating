@@ -3,7 +3,7 @@ import Rater from './util/Rater.util';
 import Selector from './util/Selector.util';
 import './styles/App.css';
 
-function App(props) {
+const App = (props) => {
 	const [iconValue, setIconValue] = useState(5);
 	const [value] = useState(100);
 	return (
@@ -12,6 +12,6 @@ function App(props) {
 			<Rater iconValue={iconValue} value={value} />
 		</div>
 	);
-}
+};
 
 export default App;

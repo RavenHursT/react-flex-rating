@@ -3,7 +3,7 @@ import {FaStarHalf} from 'react-icons/all';
 
 import '../styles/Rater.css';
 
-function Rater({iconValue}) {
+const Rater = ({iconValue}) => {
 	const [rating, setRating] = useState(null);
 	const [hover, setHover] = useState(null);
 
@@ -33,5 +33,5 @@ function Rater({iconValue}) {
 			})}
 		</div>
 	);
-}
+};
 export default Rater;
