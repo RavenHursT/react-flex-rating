@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import MyRater from './MyRater'
 
 ReactDOM.render(
 	<React.StrictMode>
-		<App />
+		<MyRater />
 	</React.StrictMode>,
 	document.getElementById('root')
-);
+)
