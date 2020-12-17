@@ -1,4 +1,7 @@
 src
-webpack.config.js
+demo
 .babelrc
-.eslintrc.js
+.gitignore
+.git
+.travis.yml
+webpack.config.js
