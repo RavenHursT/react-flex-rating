@@ -5,6 +5,8 @@ import App from './app'
 if (module.hot) module.hot.accept()
 
 render(
-  <React.StrictMode><App /></React.StrictMode>,
-  document.getElementById('demo')
+	<React.StrictMode>
+		<App />
+	</React.StrictMode>,
+	document.getElementById('demo')
 )

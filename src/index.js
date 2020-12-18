@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
-import {FaStarHalf} from 'react-icons/fa'
+import React, { useState } from 'react'
+import { FaStarHalf } from 'react-icons/fa'
 
 import './styles/Rater.css'
 
-const Rater = ({iconValue}) => {
+const Rater = ({ iconValue }) => {
 	const [rating, setRating] = useState(null)
 	const [hover, setHover] = useState(null)
 
