@@ -6,7 +6,7 @@ import './styles/Rater.css'
 const Rater = ({iconValue}) => {
 	const [rating, setRating] = useState(null)
 	const [hover, setHover] = useState(null)
-
+	console.log(`rating => `, rating)
 	return (
 		<div>
 			{[...Array(iconValue), ...Array(iconValue)].map((icon, i) => {
@@ -18,7 +18,10 @@ const Rater = ({iconValue}) => {
 							type='radio'
 							name='rating'
 							value={value}
-							onClick={() => setRating(value)}
+							onClick={() => {
+								console.log(`value => `, value)
+								return setRating(value)
+							}}
 						/>
 						<div className='star-container'>
 							<FaStarHalf
