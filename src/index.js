@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FaStarHalf, FaStar } from 'react-icons/fa'
+import { FaRegStarHalf, FaStarHalf } from 'react-icons/fa'
 
 import './styles/Rater.css'
 
@@ -7,7 +7,7 @@ const Rater = ({ iconCount }) => {
 	const [rating, setRating] = useState(null)
 	const [hover, setHover] = useState(null)
 	// check if user has set a rating by clicking a star and use rating to determine icons
-	const Star = rating ? FaStar : FaStarHalf
+	const Star = rating ? FaStarHalf : FaRegStarHalf
 
 	return (
 		<div>
