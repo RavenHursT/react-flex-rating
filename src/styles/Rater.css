@@ -1,0 +1,22 @@
+input[type='radio'] {
+	display: none;
+}
+
+.star-container {
+	cursor: pointer;
+	display: inline-block;
+	height: 2rem;
+	width: 1rem;
+	overflow: hidden;
+}
+
+.star {
+	height: 2rem;
+	width: 2rem;
+}
+
+.star-left {
+	height: 2rem;
+	width: 2rem;
+	transform: scaleX(-1) translateX(50%);
+}
